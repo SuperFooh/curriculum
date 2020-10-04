@@ -1,68 +1,111 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Deploying create-react-app production bundle with GH-pages  
 
-## Available Scripts
+Lorem ipsum dolor sit amet consectetur adipiscing elit ante, condimentum mus libero habitant eu mollis. Elementum hac orci varius conubia tempor phasellus integer aliquam purus, aenean luctus sociosqu nunc natoque ante rutrum. Quam scelerisque pulvinar diam leo mi malesuada lectus commodo rutrum, eu etiam ad lacus nullam arcu orci.
 
-In the project directory, you can run:
+## Create a CRA proyect
 
-### `npm start`
+```bash
+$ npx create-react-app my-proyect
+$ cd my-proyect
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Git configs
 
-### `npm test`
+Set user and email local configurations
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash 
+$ git config --local user.name "user name"
+$ git config --local user.email "user@email.com"
+```
+When using multiple accounts of git, remember to clear credentials.
+First of all, we'll check if we have a credential manager working.
 
-### `npm run build`
+```bash
+$ git credential-manager version
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### For clearing them in windows:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Open credential manager
+* Clear github saved credentials
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### fixing author of commit
 
-### `npm run eject`
+```bash
+$ git commit --amend --author="<userName> <userEmail>" --no-edit
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Setting our remote repositories
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+$ git add remote origin <remoteRepoURL>
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## GH-pages dependency
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Install (GH-pages)[https://www.npmjs.com/package/gh-pages] as a global dependency in your working station.
 
-## Learn More
+```bash
+$ npm i gh-pages
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Update package.json
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+We'll be adding a **homepage** key to our package.json file.
+We have to add our gh-pages URL pairing to that homepage key.
 
-### Code Splitting
+> homepage = `https://${githubUserName}.github.io/${repositoryName} 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```json
+{
+  "homepage": "https://<userName>.github.io/<repositoryName>",
+}
 
-### Analyzing the Bundle Size
+In addition, we'll be adding this two scripts for automating our deploy in just one click
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```json
+{
+  "scripts": {
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+    }
+}
 
-### Making a Progressive Web App
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### deploy script
 
-### Advanced Configuration
+Here we are running gh-pages CLI command to publish our distribution to be served by github.
+With the **-d** flag we are indicating to use the **/build** folder as the point of entrance of our gh-pages-served Application.
+If you are familiar with [CRA](https://en.reactjs.org/docs/create-a-new-react-app.html), you'll notice that is the famouse production bundle that webpack spits out when running
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```bash
+$ npm run build
+```
 
-### Deployment
+### predeploy script
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+That is why we added our **predeploy** key earlier.
+This will run immediately before than [deploy](###deploy-script).
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Workflow
+
+1. manage changes in master branch
+1. add and commit changes
+1. execute
+
+```bash 
+$ npm run deploy
+```
+
+By now, gh-pages package must have created a gh-pages branch and feeded it with our production build.
+
+1. Navigate to our package.json [homepage-key](##update-package.json) value
+1. You should visualize your div (#root) displayed on the viewport 😎👍
+
+
+
+
