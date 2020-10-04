@@ -1,10 +1,11 @@
 import React from 'react'
+import Layout from './layout/Layout'
 
 const Root = () => {
     return (
-        <div>
-            Deployed !! 😎
-        </div>
+        <Layout>
+            Pagina
+        </Layout>
     )
 }
 
