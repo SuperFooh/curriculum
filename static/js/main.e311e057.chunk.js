@@ -1,0 +1,2 @@
+(this.webpackJsonpcv=this.webpackJsonpcv||[]).push([[0],{3:function(e,t,n){e.exports=n(8)},8:function(e,t,n){"use strict";n.r(t);var c=n(0),r=n.n(c),a=n(2),l=function(){return r.a.createElement("div",null,"Deployed !! \ud83d\ude0e")};n.n(a).a.render(r.a.createElement(r.a.StrictMode,null,r.a.createElement(l,null)),document.getElementById("root"))}},[[3,1,2]]]);
+//# sourceMappingURL=main.e311e057.chunk.js.map
