@@ -108,4 +108,11 @@ By now, gh-pages package must have created a gh-pages branch and feeded it with 
 
 
 
+# Sections
+
+- [] Share profile (Call to action)
+- [] Profile Card 
+
+
+
 

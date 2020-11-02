@@ -1,11 +1,15 @@
-import React from 'react'
-import Layout from './layout/Layout'
+import React, {createRef} from 'react'
+import Layout from './Layout'
+import ProfileCard from './ProfileCard'
 
 const Root = () => {
+    const viewportRef = createRef();
     return (
-        <Layout>
-            Pagina
-        </Layout>
+        <div style={{height: "100vh", width: "100vw"}} ref={viewportRef}>
+            <Layout viewportRef={viewportRef}>
+                <ProfileCard />
+            </Layout>
+        </div>
     )
 }
 
