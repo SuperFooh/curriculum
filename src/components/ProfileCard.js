@@ -12,6 +12,9 @@ const ProfileCard = () => {
     const media = useContext(mediaContext)
 
     return (<section className={Styles.card}>
+        <div className={Styles.shareIcon}>
+            <MdShare />
+        </div>
         <div className={Styles.cardContent}>
             <img className={Styles.image} src={profileCard}/>
             <div className={Styles.intro}>
@@ -19,16 +22,16 @@ const ProfileCard = () => {
                 <h2 className={Styles.jobTitle}>Fullstack Developer</h2>
             </div>
             <ul className={Styles.contactIcons}>
-                <li className={Styles.iconContainer} data-url="linked-in">
+                <li className={Styles.iconContainer} data-url="/manuelibar">
                     <RiLinkedinFill className={Styles.icon}/>
                 </li>
-                <li className={Styles.iconContainer} data-url="email">
+                <li className={Styles.iconContainer} data-url="manuel_ibar@hotmail.com">
                     <MdEmail className={Styles.icon}/>
                 </li>
-                <li className={Styles.iconContainer} data-url="phone">
+                <li className={Styles.iconContainer} data-url="(+54) 9 1125952284">
                     <MdPhoneAndroid className={Styles.icon}/>
                 </li>
-                <li className={Styles.iconContainer} data-url="github">
+                <li className={Styles.iconContainer} data-url="@superfooh">
                     <FiGithub className={Styles.icon}/>
                 </li>
             </ul>
