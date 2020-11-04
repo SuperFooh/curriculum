@@ -15,6 +15,8 @@ export default ({children, viewportRef}) => {
         <mediaContext.Provider value={media}>
             <div className={Styles.mainContainer} >
                 <div className={Styles.test}/>
+                <div className={Styles.test2} />
+                <div className={Styles.test3} />
                 {children}
             </div>
         </mediaContext.Provider>

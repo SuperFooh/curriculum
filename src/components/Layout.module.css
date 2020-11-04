@@ -6,7 +6,7 @@
     --dark-white : #eaeaeb;
     --light-white : #f5f5f5;
 
-    
+    --darker-black: #141414;
     --dark-black: #2f3136;
     --light-black: #4f545c;
     --lighter-black: #72767d;
@@ -38,7 +38,7 @@
     padding: 0 6rem;
 }
 
-/* .test{
+.test{
     position: absolute; 
     top: -10%;
     left: -30%;
@@ -49,4 +49,27 @@
     opacity: .3;
     z-index: 0;
     
-} */
+}
+
+.test2{
+    position: absolute; 
+    bottom: -5%;
+    left: 35%;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: var(--darker-violet);
+    opacity: .3;
+    z-index: 0;
+}
+
+.test3{
+    position: absolute; 
+    top: -15%;
+    right: -35%;
+    width: 950px;
+    height: 950px;
+    transform: skew(45deg);
+    background-color: var(--light-violet);
+    z-index: 0;
+}

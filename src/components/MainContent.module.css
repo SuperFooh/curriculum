@@ -8,4 +8,8 @@
     display: flex;
     flex-flow: column nowrap;
     padding: 0 1em;
+    overflow-y: scroll;
+}
+.container::-webkit-scrollbar{
+    display: none;
 }

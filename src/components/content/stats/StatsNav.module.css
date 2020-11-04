@@ -1,0 +1,47 @@
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    
+}
+.category{
+    display: flex;
+    align-items:center ;
+    padding: 1rem 0;
+    cursor: pointer;
+}
+.category~.category{
+    margin-left: 2rem;
+}
+.categoryIcon{
+    color: var(--violet);
+    font-size: 24px;
+}
+.categoryText{
+    color: var(--darker-white);
+    font-family: 'Aldrich', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: .5rem;
+    white-space: nowrap;
+}
+
+.category:hover>.categoryText,
+.category:focus>.categoryText{
+    color: white;
+}
+.category:hover>.categoryIcon,
+.category:focus>.categoryIcon{
+    color: var(--light-violet);
+}
+
+.NavigationIndicator{
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    border-radius: 8px;
+    height: 4px;
+    min-width: 0px;
+    transition: all .5s;
+    
+}

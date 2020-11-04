@@ -2,6 +2,7 @@ import React, {createRef} from 'react'
 import Layout from './Layout'
 import ProfileCard from './ProfileCard'
 import MainContent from './MainContent'
+import Navigation from './Navigation'
 
 const Root = () => {
     const viewportRef = createRef();
@@ -10,6 +11,7 @@ const Root = () => {
             <Layout viewportRef={viewportRef}>
                 <ProfileCard />
                 <MainContent />
+                <Navigation />
             </Layout>
         </div>
     )

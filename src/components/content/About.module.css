@@ -1,26 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
 .container{
     padding: 3.5rem;
+    padding-bottom: 4.5rem;
     background-color: var(--dark-black);
     border-radius: 4px;
     box-shadow: 8px 8px 10px 2px rgba(0, 0, 0, .7);
-    
+    margin-bottom: 3rem;
+    position: relative;
+}
+.signature{
+    font-family: 'Tangerine', cursive;
+    position: absolute;
+    font-size: 34px;
+    right: 5%;
+    bottom: 5%;
+    color: var(--dark-white);
 }
 .title{
     display: inline-block;
     font-family: 'Aldrich', sans-serif;
     font-size: 32px;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     margin-right: 1rem;
     color: var(--dark-white);
     font-weight: 900;
     letter-spacing: 3px;
-
 }
 .subtitle{
     color: var(--darker-white);
     font-family: 'Aldrich', sans-serif;
     font-size: 26px;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 .text{
     color: var(--light-white);
@@ -34,18 +45,18 @@
 }
 
 .shareButton{
-    margin-bottom: 2rem;
+    
     display: inline-flex;
     border: none;
     outline: none;
     background-color: transparent;
-    font-size: 24px;
+    font-size: 18px;
     color: var(--darker-white);
     align-items: center;
     justify-content: space-between;
     border: 2px solid var(--light-violet);
     border-radius: 16px;
-    padding: .1em .5em;
+    padding: .2em .5em;
     cursor: pointer;
     box-shadow: 
         3px 3px 3px rgba(0,0,0,.8);
@@ -56,8 +67,8 @@
         inset 3px 3px 6px rgba(0,0,0,.8);
 }
 .shareButtonText{
-    margin-right: .5em;
     font-size: 18px;
+    margin-right: .5em;
     color: var(--light-white);
 }
 

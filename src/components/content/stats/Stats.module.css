@@ -1,0 +1,49 @@
+.container{
+    padding: 3.5rem;
+    background-color: var(--dark-black);
+    border-radius: 4px;
+    box-shadow: 8px 8px 10px 2px rgba(0, 0, 0, .7);
+    margin-bottom: 3rem;
+}
+.title{
+    display: inline-block;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 32px;
+    margin-bottom: 3rem;
+    margin-right: 1rem;
+    color: var(--dark-white);
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.statsContainer{
+    background-color:var(--darker-black);
+    width: 100%;
+    min-height: 50vh;
+    border-radius: 8px;
+    margin-top: 2rem;
+    
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.fallback{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.fallbackText{
+    margin-bottom: 2rem;
+    font-family: 'Aldrich', sans-serif;
+    letter-spacing: 2px;
+    font-size: 32px;
+    color: var(--light-black);
+    font-weight: 900;
+    
+}
+.fallbackImage{
+    fill: var(--light-black);
+    width: 70%;
+    height: auto;
+}
