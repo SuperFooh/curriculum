@@ -1,0 +1,21 @@
+.container{
+    flex-shrink: 0;
+    min-width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.text{
+    margin-bottom: 2rem;
+    font-family: 'Aldrich', sans-serif;
+    letter-spacing: 2px;
+    font-size: 32px;
+    color: var(--light-black);
+    font-weight: 900;
+}
+.image{
+    fill: var(--light-black);
+    width: 30%;
+    height: auto;
+}

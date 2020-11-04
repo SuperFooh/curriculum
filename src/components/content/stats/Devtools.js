@@ -3,7 +3,7 @@ import Styles from './Devtools.module.css'
 
 const Devtools = () => {
     return (
-        <div>
+        <div id="devtools">
             Devtools
         </div>
     )

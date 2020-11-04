@@ -22,28 +22,12 @@
     min-height: 50vh;
     border-radius: 8px;
     margin-top: 2rem;
-    
     display: flex;
-    align-content: center;
-    justify-content: center;
+    flex-flow: row nowrap;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
 }
-.fallback{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+.statsContainer::-webkit-scrollbar{    
+    display: none;
 }
-.fallbackText{
-    margin-bottom: 2rem;
-    font-family: 'Aldrich', sans-serif;
-    letter-spacing: 2px;
-    font-size: 32px;
-    color: var(--light-black);
-    font-weight: 900;
-    
-}
-.fallbackImage{
-    fill: var(--light-black);
-    width: 70%;
-    height: auto;
-}
+

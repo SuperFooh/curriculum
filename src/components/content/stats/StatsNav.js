@@ -29,9 +29,6 @@ const StatsNav = ({selectedCategory, setSelectedCategory}) => {
 		<nav>
 			<ul className={Styles.container}>
 				<li  onClick={navigate} ref={setCategoryRef} id="coding" className={Styles.category}>
-                    <a>
-                        
-                    </a>
                     <RiCodeSSlashLine className={Styles.categoryIcon}/>
                     <span className={Styles.categoryText}>Coding</span>
                 </li>

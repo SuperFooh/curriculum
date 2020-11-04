@@ -3,7 +3,7 @@ import Styles from './Frameworks.module.css'
 
 const Frameworks = () => {
     return (
-        <div>
+        <div id="frameworks">
             FrameWorks
         </div>
     )

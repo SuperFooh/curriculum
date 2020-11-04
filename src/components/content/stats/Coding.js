@@ -3,7 +3,7 @@ import Styles from './Coding.module.css'
 
 const Coding = () => {
     return (
-        <div>
+        <div className={Styles.container} id="holi">
             Coding
         </div>
     )

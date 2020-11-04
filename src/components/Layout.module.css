@@ -21,12 +21,13 @@
 }
 
 .mainContainer{
-    /* background-color: #1a1c20; */
-    position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
     background: linear-gradient(328deg, rgba(0,0,0,1) 0%, #1a1c20 70% , rgba(55,58,64,1) 100%);
     display: grid;
-    height: 100%;
-    width: 100%;
     grid-template-columns: 
         minmax(200px, calc( var(--profile-card-height) * var(--profile-card-aspect-ratio)))
         1fr /*content*/
