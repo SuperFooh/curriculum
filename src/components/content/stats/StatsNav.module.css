@@ -24,18 +24,18 @@
     margin-left: .5rem;
     white-space: nowrap;
 }
-.category:focus{
-    background-color: red;
-}
-.category:hover>.categoryText,
-.category:active>.categoryText{
+.category:hover>.categoryText{
     color: white;
 }
-.category:hover>.categoryIcon,
-.category:active>.categoryIcon{
+.category:hover>.categoryIcon{
     color: var(--light-violet);
 }
-
+.activeNavlink>.categoryText{
+    color: white;
+}
+.activeNavlink>.categoryIcon{
+    color: var(--light-violet);
+}
 .NavigationIndicator{
     position: absolute;
     bottom: 0;
@@ -44,5 +44,4 @@
     height: 4px;
     min-width: 0px;
     transition: all .5s;
-    
 }
