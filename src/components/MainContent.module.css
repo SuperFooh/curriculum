@@ -9,6 +9,7 @@
     flex-flow: column nowrap;
     padding: 0 1em;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 .container::-webkit-scrollbar{
     display: none;

@@ -14,35 +14,44 @@ const StatsNav = ({selectedCategory, setSelectedCategory}) => {
     }, [ref])
     
     const setCategoryRef = useCallback(element => {
-        if (element?.id === selectedCategory){
+        // console.log(element?.getAttribute('name'))
+        if (element?.getAttribute('name') === selectedCategory){
             setRef(element);
-            element.focus();
+            
         }
     }, [selectedCategory])
 
     const navigate = e => {
         const node = e.currentTarget
-        setSelectedCategory(node.id)
+        setSelectedCategory(node.getAttribute('name'))
     }
 
 	return (
 		<nav>
 			<ul className={Styles.container}>
-				<li  onClick={navigate} ref={setCategoryRef} id="coding" className={Styles.category}>
-                    <RiCodeSSlashLine className={Styles.categoryIcon}/>
-                    <span className={Styles.categoryText}>Coding</span>
+				<li className={Styles.categoryContainer} onClick={navigate} ref={setCategoryRef} name="coding" >
+                    <a href="#coding" className={Styles.category}>
+                        <RiCodeSSlashLine className={Styles.categoryIcon}/>
+                        <span className={Styles.categoryText}>Coding</span>
+                    </a>
                 </li>
-				<li onClick={navigate} ref={setCategoryRef} id="frameworks" className={Styles.category}>
-                    <SiCodesandbox className={Styles.categoryIcon}/>
-                    <span className={Styles.categoryText}>Libraries &#38; Frameworks</span>
+				<li className={Styles.categoryContainer} onClick={navigate} ref={setCategoryRef} name="frameworks">
+                    <a href="#frameworks" className={Styles.category}>
+                        <SiCodesandbox className={Styles.categoryIcon}/>
+                        <span className={Styles.categoryText}>Libraries &#38; Frameworks</span>
+                    </a>
                 </li>
-				<li onClick={navigate} ref={setCategoryRef} id="devtools" className={Styles.category}>
-                    <RiToolsFill className={Styles.categoryIcon}/>
-                    <span className={Styles.categoryText}>Devtools</span>
+				<li className={Styles.categoryContainer} onClick={navigate} ref={setCategoryRef} name="devtools">
+                    <a href="#devtools" className={Styles.category}>
+                        <RiToolsFill className={Styles.categoryIcon}/>
+                        <span className={Styles.categoryText}>Devtools</span>
+                    </a>
                 </li>
-				<li onClick={navigate} ref={setCategoryRef} id="more" className={Styles.category}>
-                    <BiPlusCircle className={Styles.categoryIcon}/>
-                    <span className={Styles.categoryText}>More</span>
+				<li className={Styles.categoryContainer} onClick={navigate} ref={setCategoryRef} name="more">
+                    <a href="#more" className={Styles.category}>
+                        <BiPlusCircle className={Styles.categoryIcon}/>
+                        <span className={Styles.categoryText}>More</span>
+                    </a>
                 </li>
                 <span 
                     ref={navigationIndicatorRef} 

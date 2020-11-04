@@ -3,7 +3,9 @@ import Styles from './Stats.module.css'
 import StatsNav from './StatsNav'
 import Fallback from './Fallback'
 import Coding from './Coding'
-
+import Frameworks from './Frameworks'
+import Devtools from './Devtools'
+import More from './More'
 
 const Stats = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -16,6 +18,9 @@ const Stats = () => {
             <div className={Styles.statsContainer}>
                 <Fallback />
                 <Coding />
+                <Frameworks />
+                <Devtools />
+                <More />
             </div>
         </article>
     )

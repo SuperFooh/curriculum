@@ -4,7 +4,7 @@ import {MdShare} from 'react-icons/md'
 const About = () => {
     return (
         <article className={Styles.container}>
-            <h2 className={Styles.title}>ABOUT ME</h2>
+            <h2 className={Styles.title}>ABOUT</h2>
             <button className={Styles.shareButton}>
                 <span className={Styles.shareButtonText}>Compartir</span>
                 <MdShare  className={Styles.shareIcon}/>

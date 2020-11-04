@@ -7,7 +7,7 @@ const MainContent = () => {
     return (
         <main className={Styles.container}>
             <About />
-            <Stats /> 
+            <Stats />
         </main>
     )
 }

@@ -1,8 +1,7 @@
 .container {
     position: relative;
     width: 100%;
-    display: flex;
-    
+    display: flex;   
 }
 .category{
     display: flex;
@@ -10,7 +9,7 @@
     padding: 1rem 0;
     cursor: pointer;
 }
-.category~.category{
+.categoryContainer~.categoryContainer{
     margin-left: 2rem;
 }
 .categoryIcon{
@@ -25,13 +24,15 @@
     margin-left: .5rem;
     white-space: nowrap;
 }
-
+.category:focus{
+    background-color: red;
+}
 .category:hover>.categoryText,
-.category:focus>.categoryText{
+.category:active>.categoryText{
     color: white;
 }
 .category:hover>.categoryIcon,
-.category:focus>.categoryIcon{
+.category:active>.categoryIcon{
     color: var(--light-violet);
 }
 

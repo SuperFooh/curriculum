@@ -3,7 +3,7 @@ import Styles from './More.module.css'
 
 const More = () => {
     return (
-        <div id="more">
+        <div className={Styles.container} id="more">
             More...
         </div>
     )

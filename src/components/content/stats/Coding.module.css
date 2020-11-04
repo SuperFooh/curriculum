@@ -1,6 +1,10 @@
 .container{
     width: 100%;
     min-height: 100%;
-    flex-shrink: 0;
-    /* flex: 0 0 auto; */
+    flex: 0 0 auto;
+    color: white;
+    font-size: 72px;
+    font-weight: 900;
+    text-align: center;
+    
 }
