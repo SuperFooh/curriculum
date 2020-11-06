@@ -8,8 +8,8 @@
 .card{
     z-index: 8;
     grid-column: 1 / span 1;
-    grid-row: 1 / -1;
-    margin: auto 0;
+    grid-row: 2 / -1;
+    
     width: 100%;
     height: var(--profile-card-height);
     background-color: var(--violet);

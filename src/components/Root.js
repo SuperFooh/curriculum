@@ -3,7 +3,7 @@ import Styles from './Root.module.css'
 import Layout from './Layout'
 import ProfileCard from './ProfileCard'
 import MainContent from './MainContent'
-import Navigation from './Navigation'
+import Navigation from './nav/Nav'
 
 const Root = () => {
     const viewportRef = useRef();

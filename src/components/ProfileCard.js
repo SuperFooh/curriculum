@@ -9,10 +9,9 @@ import {RiLinkedinFill} from 'react-icons/ri'
 
 
 const ProfileCard = () => {
-    const media = useContext(mediaContext)
+    // const media = useContext(mediaContext)
 
     return (<aside className={Styles.card}>
-        
         <div className={Styles.cardContent}>
             <img className={Styles.image} src={profileCard}/>
             <div className={Styles.intro}>
