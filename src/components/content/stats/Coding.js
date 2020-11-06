@@ -69,32 +69,38 @@ const Coding = () => {
     const [selectedLanguage, setSelectedLanguage] = useState(null)
     const activateLanguageItem = e => {
         let node = e.currentTarget;
-        console.log(node.id)
-        setSelectedLanguage(node.id)
+        setSelectedLanguage(meta[node.id])
     }
     return (
         <div className={Styles.container} id="coding">
-            <h3>Language</h3>
-            <ul className={Styles.languageList}>
-                {
-                    Object.keys(meta).map(key => {
-                        let language = meta[key];
-                        return(
-                            <li 
-                                onClick={activateLanguageItem}
-                                className={`${Styles.languageItem} ${selectedLanguage === language.id ? Styles.activeLanguage : ''}`} 
-                                key={language.id}
-                                id={language.id}
-                            >
-                                {language.text}
-                            </li>
-                        )
-                    })
-                }
-            </ul>
-            
+            <div className={Styles.languageSection}>
+                <h3 className={Styles.languageSectionTitle}>Language</h3>
+                <ul className={Styles.languageList}>
+                    {
+                        Object.keys(meta).map(key => {
+                            let language = meta[key];
+                            return(
+                                <li 
+                                    onClick={activateLanguageItem}
+                                    className={`${Styles.languageItem} ${selectedLanguage === language.id ? Styles.activeLanguage : ''}`} 
+                                    key={language.id}
+                                    id={language.id}
+                                >
+                                    {language.text}
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
+            </div>
             <div className={Styles.explorer}>
-
+                {selectedLanguage && (()=> {
+                    let Icon = selectedLanguage.icon
+                    return (<>
+                        <h4 className={Styles.exploredTitle}>{selectedLanguage.text}</h4>
+                        <Icon className={Styles.exploredIcon}/>
+                    </>)
+                })()}
             </div>
         </div>
     )
