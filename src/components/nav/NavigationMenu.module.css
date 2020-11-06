@@ -1,0 +1,36 @@
+.container{
+    margin-top: 0;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: .5s;
+}
+.containerExpanded{
+    transform: scaleY(1);
+    margin-top: 2rem;
+}
+.navlinkContainer{
+    margin: 1rem 0;
+    cursor: pointer;
+}
+.navlinkContainer::after{
+
+}
+.navlinkContainer::before{
+
+}
+.navlink{
+
+}
+.navlinkIcon{
+    font-size: 32px;
+    color: var(--dark-white);
+}
+.navlink[name=studies]>.navlinkIcon{
+    font-size: 42px;
+}
