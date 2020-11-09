@@ -35,11 +35,6 @@
     padding: 1rem 0;
 }
 
-.explorer{
-    position: relative;
-    width: 70%;
-    padding-left: 2rem ;
-}
 .languageItem{
     width: 100%;
     font-family: 'Roboto', serif;
@@ -66,26 +61,16 @@
     transform: translate(-50%,-50%);
     border-radius: 50%;
 }
-.activeLanguage::after{
-    border: solid 1px black;
+.activeLanguage{
     background-color: var(--light-violet);
+}
+.activeLanguage::after{
+    /* border: solid 1px black; */
+    background-color: var(--light-white);
 }
 
 .languageItem:nth-last-child(1){
     margin-bottom: 0;
 }
-.exploredIcon{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    font-size: 278px;
-    color :white;
-}
-.exploredTitle{
-    margin-top: 24px;
-    font-size: 78px;
-    color: white;
-    text-align: center;
-    font-family: 'Roboto', serif;
-}
+
+

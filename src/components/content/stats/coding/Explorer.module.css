@@ -1,0 +1,58 @@
+.local-env{
+    --pi: 3.14159265358979;
+}
+
+.container{
+    position: relative;
+    height: 100%;
+    width: 70%;
+    padding-left: 2rem ;
+}
+.graphsSection{
+    height: 70%;
+    width: 100%;
+    display: flex;
+
+}
+.mainGraph{
+    height: auto;
+    width: 50%;
+    position: relative;
+    padding: 1rem;
+}
+.mainGraph>svg{
+    height: 100%;
+    width: 100%;
+    transform: rotate(124deg);
+
+}
+.mainGraph>svg>circle{
+    fill: none;
+    stroke: red;
+    stroke-width: 10px;
+    stroke-linecap: round;
+    stroke-dasharray: 510px; /*circunferencia entera = 2*pi*r */
+    stroke-dashoffset: 0px;
+    transition: stroke-dashoffset 0.35s;
+    /*animation: animate 3s linear forwards; /*forwards para que quede en el ultimo estado de la animacion*/
+}
+
+
+.secondaryGraphs{
+    width: 50%;
+}
+/* .Icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 278px;
+    color :white;
+} */
+
+
+/* @keyframes animate {
+    to {
+        stroke-dashoffset: 0;
+    }
+} */

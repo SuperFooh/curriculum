@@ -3,7 +3,7 @@ import Styles from './Coding.module.css'
 import {DiJavascript, DiCss3, DiPython, DiTerminal, DiHtml5} from 'react-icons/di'
 import {SiVisualstudio} from 'react-icons/si'
 import {AiOutlineConsoleSql} from 'react-icons/ai'
-
+import Explorer from './Explorer'
 
 const meta = {
     'javascript' :{
@@ -69,6 +69,7 @@ const Coding = () => {
     const [selectedLanguage, setSelectedLanguage] = useState(null)
     const activateLanguageItem = e => {
         let node = e.currentTarget;
+        console.log("selected ", node)
         setSelectedLanguage(meta[node.id])
     }
     return (
@@ -82,7 +83,7 @@ const Coding = () => {
                             return(
                                 <li 
                                     onClick={activateLanguageItem}
-                                    className={`${Styles.languageItem} ${selectedLanguage === language.id ? Styles.activeLanguage : ''}`} 
+                                    className={`${Styles.languageItem} ${selectedLanguage?.id === language.id ? Styles.activeLanguage : ''}`} 
                                     key={language.id}
                                     id={language.id}
                                 >
@@ -93,15 +94,7 @@ const Coding = () => {
                     }
                 </ul>
             </div>
-            <div className={Styles.explorer}>
-                {selectedLanguage && (()=> {
-                    let Icon = selectedLanguage.icon
-                    return (<>
-                        <h4 className={Styles.exploredTitle}>{selectedLanguage.text}</h4>
-                        <Icon className={Styles.exploredIcon}/>
-                    </>)
-                })()}
-            </div>
+            <Explorer selectedLanguage={selectedLanguage}/>
         </div>
     )
 }
