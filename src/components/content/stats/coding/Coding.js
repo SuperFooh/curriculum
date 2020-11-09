@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import Styles from './Coding.module.css'
-import {DiJavascript, DiCss3, DiPython, DiTerminal, DiHtml5} from 'react-icons/di'
+import {DiDatabase, DiJavascript, DiCss3, DiPython, DiTerminal, DiHtml5} from 'react-icons/di'
 import {SiVisualstudio} from 'react-icons/si'
-import {AiOutlineConsoleSql} from 'react-icons/ai'
 import Explorer from './Explorer'
 
 const meta = {
@@ -11,28 +10,32 @@ const meta = {
         text: 'JavaScript',
         icon: DiJavascript,
         color: '',
-        filter: ['frontEnd', 'backEnd', 'dataBase']
+        filter: ['frontEnd', 'backEnd', 'dataBase'],
+        progressRatio: .95
     },
     'css' :{
         id: 'css',
         text: 'CSS',
         icon: DiCss3,
         color: '',
-        filter: ['frontEnd']
+        filter: ['frontEnd'],
+        progressRatio: .75
     },
     'python' :{
         id: 'python',
         text: 'Python',
         icon: DiPython,
         color: '',
-        filter: ['backEnd']
+        filter: ['backEnd'],
+        progressRatio: .1
     },
     'bash' :{
         id: 'bash',
         text: 'Bash',
         icon: DiTerminal,
         color: '',
-        filter: ['infraStructure']
+        filter: ['infraStructure'],
+        progressRatio: .25
     },
     'csharp' :{
         id: 'csharp',
@@ -40,12 +43,14 @@ const meta = {
         icon: SiVisualstudio,
         color: '',
         filter: ['backEnd'],
+        progressRatio: .3
     },'vb' :{
         id: 'vb',
         text: 'Visual Basic',
         icon: SiVisualstudio,
         color: '',
         filter: ['backEnd'],
+        progressRatio: .2
     },
     'html' :{
         id: 'html',
@@ -53,13 +58,15 @@ const meta = {
         icon: DiHtml5,
         color: '', 
         filter: ['frontEnd'],
+        progressRatio: .9
     },
     'sql' :{
         id: 'sql',
         text: 'SQL',
-        icon: AiOutlineConsoleSql,
+        icon: DiDatabase,
         color: '',
-        filter: ['dataBase']
+        filter: ['dataBase'],
+        progressRatio: .7
     },
     
 }
@@ -69,7 +76,6 @@ const Coding = () => {
     const [selectedLanguage, setSelectedLanguage] = useState(null)
     const activateLanguageItem = e => {
         let node = e.currentTarget;
-        console.log("selected ", node)
         setSelectedLanguage(meta[node.id])
     }
     return (
@@ -94,7 +100,11 @@ const Coding = () => {
                     }
                 </ul>
             </div>
-            <Explorer selectedLanguage={selectedLanguage}/>
+            {!!selectedLanguage && <Explorer
+                Icon={selectedLanguage.icon} 
+                progressRatio={selectedLanguage.progressRatio}
+                languageId={selectedLanguage.id}
+            />}
         </div>
     )
 }
