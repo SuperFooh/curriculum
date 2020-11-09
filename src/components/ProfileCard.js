@@ -1,6 +1,6 @@
-import React, {useContext} from 'react'
+import React/*, {useContext}*/ from 'react'
 import Styles from './ProfileCard.module.css'
-import {mediaContext} from './Layout'
+// import {mediaContext} from './Layout'
 import profileCard from '../assets/gentleman.jpg'
 import {FaWhatsapp,FaCopy} from 'react-icons/fa'
 import {MdEmail,MdFileDownload} from 'react-icons/md'
@@ -13,7 +13,7 @@ const ProfileCard = () => {
 
     return (<aside className={Styles.card}>
         <div className={Styles.cardContent}>
-            <img className={Styles.image} src={profileCard}/>
+            <img alt="profilePicture" className={Styles.image} src={profileCard}/>
             <div className={Styles.intro}>
                 <h1 className={Styles.name}>Manuel Ibar</h1>
                 <h2 className={Styles.jobTitle}>Fullstack Developer</h2>

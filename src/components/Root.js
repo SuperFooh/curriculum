@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react'
+import React, {useRef} from 'react'
 import Styles from './Root.module.css'
 import Layout from './Layout'
 import ProfileCard from './ProfileCard'

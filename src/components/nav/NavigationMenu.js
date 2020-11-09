@@ -23,7 +23,7 @@ const meta = [
 ]
 
 const NavigationMenu = ({isExpanded}) => {
-    const [selectedCategory, setSelectedCategory] = useState(null)
+    const [selectedCategory, /*setSelectedCategory*/] = useState(null)
     const activateLink = e => {
         let node = e.currentTarget
         console.log(node.id)

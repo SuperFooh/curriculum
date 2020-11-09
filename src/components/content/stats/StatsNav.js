@@ -1,4 +1,4 @@
-import React, {useCallback, useState, useEffect, useRef} from "react";
+import React, {useCallback, useState, useRef} from "react";
 import Styles from './StatsNav.module.css'
 import { SiCodesandbox} from 'react-icons/si'
 import { RiCodeSSlashLine, RiToolsFill } from 'react-icons/ri'
