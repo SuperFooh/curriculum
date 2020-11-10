@@ -7,7 +7,7 @@ import Navigation from './nav/Nav'
 
 const Root = () => {
     const viewportRef = useRef();
-    return (
+    return (<>
         <div className={Styles.container} ref={viewportRef}>
             <Layout viewportRef={viewportRef}>
                 <ProfileCard />
@@ -15,7 +15,7 @@ const Root = () => {
                 <Navigation />
             </Layout>
         </div>
-    )
+    </>)
 }
 
 export default Root

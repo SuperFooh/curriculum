@@ -1,5 +1,4 @@
 .container{
-    z-index: 8;
     grid-column: 2 / span 1;
     grid-row: 2 / -1;
     width: 100%;

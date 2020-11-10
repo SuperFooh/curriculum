@@ -9,71 +9,87 @@ const meta = {
         id: 'javascript',
         text: 'JavaScript',
         icon: DiJavascript,
-        color: '',
+        color: '#efd81e',
         filter: ['frontEnd', 'backEnd', 'dataBase'],
-        progressRatio: .95
+        progressRatio: .95,
+        projects: 2,
+        certificates: 3,
     },
     'css' :{
         id: 'css',
         text: 'CSS',
         icon: DiCss3,
-        color: '',
+        color: '#016bb4',
         filter: ['frontEnd'],
-        progressRatio: .75
+        progressRatio: .9,
+        projects: 2,
+        certificates: 3,
     },
     'python' :{
         id: 'python',
         text: 'Python',
         icon: DiPython,
-        color: '',
+        color: '#01d638',
         filter: ['backEnd'],
-        progressRatio: .1
+        progressRatio: .3,
+        projects: 2,
+        certificates: 3,
     },
     'bash' :{
         id: 'bash',
         text: 'Bash',
         icon: DiTerminal,
-        color: '',
+        color: '#eaeaeb',
         filter: ['infraStructure'],
-        progressRatio: .25
+        progressRatio: .25,
+        projects: 2,
+        certificates: 3,
     },
     'csharp' :{
         id: 'csharp',
         text: 'C Sharp',
         icon: SiVisualstudio,
-        color: '',
+        color: '#7d3583',
         filter: ['backEnd'],
-        progressRatio: .3
+        progressRatio: .5,
+        projects: 2,
+        certificates: 3,
     },'vb' :{
         id: 'vb',
         text: 'Visual Basic',
         icon: SiVisualstudio,
-        color: '',
+        color: '#185c91',
         filter: ['backEnd'],
-        progressRatio: .2
+        progressRatio: .4,
+        projects: 2,
+        certificates: 3,
     },
     'html' :{
         id: 'html',
         text: 'HTML',
         icon: DiHtml5,
-        color: '', 
+        color: '#e34d26', 
         filter: ['frontEnd'],
-        progressRatio: .9
+        progressRatio: .9,
+        projects: 2,
+        certificates: 3,
     },
     'sql' :{
         id: 'sql',
         text: 'SQL',
         icon: DiDatabase,
-        color: '',
+        color: '#f84741',
         filter: ['dataBase'],
-        progressRatio: .7
+        progressRatio: .87,
+        projects: 2,
+        certificates: 3,
     },
     
 }
 
 const Coding = () => {
 
-    const [selectedLanguage, setSelectedLanguage] = useState(null)
+    const [selectedLanguage, setSelectedLanguage] = useState(meta['javascript'])
     const activateLanguageItem = e => {
         let node = e.currentTarget;
         setSelectedLanguage(meta[node.id])
@@ -104,6 +120,8 @@ const Coding = () => {
                 Icon={selectedLanguage.icon} 
                 progressRatio={selectedLanguage.progressRatio}
                 languageId={selectedLanguage.id}
+                color={selectedLanguage.color}
+                certificates={selectedLanguage.certificates}
             />}
         </div>
     )

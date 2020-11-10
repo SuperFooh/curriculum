@@ -16,9 +16,9 @@ const Stats = () => {
             <StatsNav selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
             <div className={Styles.statsContainer}>
                 <Coding />
-                <Frameworks />
+                {/* <Frameworks />
                 <Devtools />
-                <More />
+                <More /> */}
             </div>
         </article>
     )

@@ -22,6 +22,7 @@
 
 .mainContainer{
     position: fixed;
+    z-index: 0;
     left: 0;
     top: 0;
     right: 0;
@@ -48,8 +49,7 @@
     clip-path: polygon(56% 0, 8% 69%, 100% 45%);
     background-color: var(--darker-violet);
     opacity: .3;
-    z-index: 0;
-    
+    z-index: -100;
 }
 
 .test2{
@@ -61,7 +61,7 @@
     border-radius: 50%;
     background-color: var(--darker-violet);
     opacity: .3;
-    z-index: 0;
+    z-index: -100;
 }
 
 .test3{
@@ -72,5 +72,5 @@
     height: 950px;
     transform: skew(45deg);
     background-color: var(--light-violet);
-    z-index: 0;
+    z-index: -100;
 }

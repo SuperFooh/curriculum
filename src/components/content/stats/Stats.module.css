@@ -1,4 +1,5 @@
 .container{
+    position: relative;
     padding: 3.5rem;
     background-color: var(--dark-black);
     border-radius: 4px;
@@ -17,12 +18,12 @@
 }
 
 .statsContainer{
+    display: flex;
     background-color:var(--darker-black);
     width: 100%;
     height: 50vh;
     border-radius: 8px;
     margin-top: 2rem;
-    display: flex;
     flex-flow: row nowrap;
     overflow-x: scroll;
     scroll-behavior: smooth;
