@@ -5,18 +5,20 @@
 }
 
 .container{
+    display: grid;
     height: 100%;
     width: 70%;
     padding-left: 2rem ;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 3rem;
 }
-.graphsSection{
-    height: 70%;
-    width: 100%;
-    display: flex;
-}
+
 .mainGraph{
-    height: auto;
-    width: 50%;
+    grid-row: 1 / 2;
+    grid-column: 1/2;
+    height: 100%;
+    width: 100%;
     position: relative;
     padding: 1rem;
 }
@@ -37,12 +39,17 @@
 }
 @keyframes animate {to {stroke-dashoffset: 0}}
 
+.iconContainer{
+    position: relative;
+    width: 50%;
+    height: 50%;
+}
 .Icon{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 100%;
+    width: 50%;
     height: 50%;
     color : var(--dark-white);
 }
@@ -57,41 +64,113 @@
 }
 
 .secondaryGraphs{
-    width: 50%;
+    grid-row: 1/-1;
+    grid-column: 2/3;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
     align-content:center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .medalContainer{
     position: relative;
-    z-index: 0;
-    height: 50%;
-    width: 50%;
+    height: 2em;
+    width: 2em;
     margin: 0 auto;
+    z-index: 0;
+    font-size: 72px;
+    cursor: pointer;
 }
+
+.medalContainer::after{
+    content: 'Certificates';
+    opacity: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: black;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    font-weight: 900;
+    text-align: center;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: opacity .3s;
+}
+.medalContainer:hover::after{
+    opacity: 1;
+}
+.medalContainer:hover .medalCircle{
+    filter: blur(5px);
+}
+
+
 .medal{
     position: absolute;
     padding: .5rem;
     border-radius: 50%;
-    border: solid 2px black;
     background-color: #fac729;
     height: 100%;
     width: 100%;
     z-index: 10;
+    overflow: hidden;
 }
-.ribon{
-    
+
+
+.medal::before{
+    content:'';
+    height: 200%;
+    width: 100%;
+    top: -100%;
+    left: -100%;
     position: absolute;
-    clip-path: polygon(50% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
-    background-color: red;
+    transform: rotate(15deg) translate(-10%,-10%);
+    background-color: whitesmoke;
+    opacity: .5;
+    z-index: 10;
+    animation: shine .25s linear .5s forwards;
+}
+
+.medal::after{
+    content:'';
+    height: 200%;
+    width: 20%;
+    top: -100%;
+    left: -100%;
+    position: absolute;
+    transform: rotate(15deg) translate(-10%,-10%);
+    background-color: whitesmoke;
+    opacity: .5;
+    z-index: 10;
+    animation: shine .25s linear .7s forwards;
+}
+@keyframes shine {
+    to{
+        top: 0;
+        left: 100%;
+    }
+}
+
+.ribon{
+    position: absolute;
+    clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
     width: 30%;
     height: 100%;
-    top: 25%;
-    left: 40%;
-    transform: rotate(150deg);
     z-index:-1;
+}
+.ribon:nth-child(2){
+    transform: rotate(150deg);
+    top: 25%;
+    left: 42%;
+    background-color: #f31904;
+}
+.ribon:nth-child(3){
+    transform: rotate(-150deg);
+    top: 25%;
+    left: 37%;
+    background-color: #fc402e;
 }
 .medalCircle{
     position: relative;
@@ -100,7 +179,11 @@
     background-color: #df7e08;
     border-radius: 50%;
     overflow: hidden;
+    filter: none;
+    transition: filter .5s;
 }
+
+
 .medalCircle::before{
     content: '';
     position: absolute;
@@ -118,11 +201,125 @@
     left: 50%;
     transform: translate(-50%,-50%);
     font-family: 'Roboto', sans-serif;
-    font-size: 72px;
     color: var(--dark-white);
 }
 
+
 .projects{
-    height: 50%;
-    width: 50%;
+    position: relative;
+    margin: 0 auto;
+    font-size: 72px;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color:var(--dark-black);
+    padding: .5rem;
+    z-index: 0;
+    cursor: pointer;
+    filter: none;
+    transition: filter .5s;
+}
+.projectsLegend{
+    opacity: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: black;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    font-weight: 900;
+    text-align: center;
+    transform: translate(-.5rem, -50%); /*para solventar el padding del padre*/
+    z-index: 10;
+    transition: opacity .3s;
+}
+.projects:hover>.projectsLegend{
+    opacity: 1;
+}
+.projects:hover>.projectsCircle{
+    filter: blur(5px)
+}
+
+.projects::after{
+    content:'';
+    height: 200%;
+    width: 20%;
+    top: -100%;
+    left: -100%;
+    position: absolute;
+    transform: rotate(15deg) translate(-10%,-10%);
+    background-color: whitesmoke;
+    opacity: .5;
+    z-index: 10;
+    animation: shine .25s linear .7s forwards;
+}
+.projects::before{
+    content:'';
+    height: 200%;
+    width: 100%;
+    top: -100%;
+    left: -100%;
+    position: absolute;
+    transform: rotate(15deg) translate(-10%,-10%);
+    background-color: whitesmoke;
+    opacity: .5;
+    z-index: 10;
+    animation: shine .25s linear .5s forwards;
+}
+
+.projectsCircle{
+    position: relative;
+    background-color: var(--lighter-black);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.projectsCircle::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: skew(-45deg);
+    background-color: var(--light-black);
+}
+.projectsAmount{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Roboto', sans-serif;
+    color: var(--dark-white);
+}
+
+.info{
+    grid-row: 2/3;
+    grid-column: 1/2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    padding: 1rem;
+}
+.infoItem{
+
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: .5rem;
+    color: var(--dark-white);
+    font-family: 'Roboto', sans-serif;
+}
+.infoTitle{
+    display: inline-block;
+
+}
+.infoIcon{
+    font-size: 24px;
+    margin-right: .4em;
 }

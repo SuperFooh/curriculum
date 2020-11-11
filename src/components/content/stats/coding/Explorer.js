@@ -1,11 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IconContext } from "react-icons";
 import Styles from "./Explorer.module.css";
+import { SiCodesandbox} from 'react-icons/si'
+import {MdLibraryBooks} from 'react-icons/md'
 
 //animacion del counter
 
-const Explorer = ({ languageId, progressRatio, Icon, color, certificates }) => {
-	const [count, setCount] = useState(0);
+const Explorer = ({ projects,languageId, progressRatio, Icon, color, certificates }) => {
+	const [progressCount, setProgressCount] = useState(0);
+	const [projectsCount, setProjectsCount] = useState(0);
+	const [certificatesCount, setCertificatesCount] = useState(0);
 	const svgRef = useRef(null);
 	//#region responsive dimensions
 	useEffect(() => {
@@ -43,14 +47,14 @@ const Explorer = ({ languageId, progressRatio, Icon, color, certificates }) => {
 		const easeOutQuad = (t) => t * (2 - t);
 		const frameDuration = 1000 / 60; //calculo de cuanto dura cada frame si queremos actualizarlo 60 veces
 		const animationDuration = 1000; //en ms
-		let countTo = progressRatio * 100;
 		let frame = 0;
 		const totalFrames = Math.round(animationDuration / frameDuration);
 		const counter = setInterval(() => {
 			frame++;
 			const progress = easeOutQuad(frame / totalFrames);
-			setCount(Math.floor(countTo * progress));
-
+			setProgressCount(Math.floor(progressRatio * 100 * progress));
+			setProjectsCount(Math.floor(projects * progress));
+			setCertificatesCount(Math.floor(certificates * progress));
 			if (frame === totalFrames) {
 				clearInterval(counter);
 			}
@@ -58,15 +62,13 @@ const Explorer = ({ languageId, progressRatio, Icon, color, certificates }) => {
 				clearInterval(counter);
 			};
 		}, frameDuration);
-	}, [progressRatio]);
+	}, [progressRatio,projects,certificates]);
 	//#endregion
 	return (
 		<div className={Styles.container}>
 			<IconContext.Provider value={{ color: `${color}` }}>
-				<div className={Styles.graphsSection}>
 					<div className={Styles.mainGraph}>
 						<svg className={Styles.progressContainer} ref={svgRef}>
-							{/* es necesario pasarle el key para el trigger de animaciones */}
 							<g>
 								<circle className={Styles.circle} cx='50%' cy='50%' />
 								<circle
@@ -78,26 +80,41 @@ const Explorer = ({ languageId, progressRatio, Icon, color, certificates }) => {
 								/>
 							</g>
 						</svg>
+						{/* <div className={Styles.iconContainer}>
+
+						</div> */}
 						<Icon className={Styles.Icon} />
-						<span className={Styles.progressValue}>{count} &#37;</span>
+						<span className={Styles.progressValue}>{progressCount} &#37;</span>
 					</div>
 					<div className={Styles.secondaryGraphs}>
-						{/* <div className={Styles.medalContainer}> */}
-							<div className={Styles.medalContainer}>
-								<div className={Styles.medal}>
-									{/* <div className={Styles.medalCircle}>
-										<span className={Styles.certificateAmount}>{certificates}</span>
-									</div> */}
+						<div key={`${languageId}cert`} className={Styles.medalContainer}>
+							<div className={Styles.medal}>
+								<div className={Styles.medalCircle}>
+									<span className={Styles.certificateAmount}>{certificatesCount}</span>
 								</div>
-								<div className={Styles.ribon}></div>
 							</div>
-						{/* </div> */}
-
-						{/* <div className={Styles.projects}></div> */}
+								<div className={Styles.ribon} />
+								<div className={Styles.ribon} />
+						</div>
+						<div key={`${languageId}proj`} className={Styles.projects}>
+							<span className={Styles.projectsLegend}>Projects</span>
+							<div className={Styles.projectsCircle}>
+								<span className={Styles.projectsAmount}>
+									{projectsCount}
+								</span>
+							</div>
+						</div>
 					</div>
-				</div>
-				{/* <ul>
-                </ul> */}
+					{/* <div className={Styles.info}>
+						<div className={Styles.infoItem}>
+							<SiCodesandbox className={Styles.infoIcon}/>
+							<span className={Styles.infoTitle}>Frameworks</span>
+						</div>
+						<div className={Styles.infoItem}>
+							<MdLibraryBooks className={Styles.infoIcon}/>
+							<span className={Styles.infoTitle}>Libraries</span>
+						</div>
+					</div> */}
 			</IconContext.Provider>
 		</div>
 	);
