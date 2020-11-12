@@ -83,8 +83,10 @@ const Explorer = ({ projects,languageId, progressRatio, Icon, color, certificate
 						{/* <div className={Styles.iconContainer}>
 
 						</div> */}
-						<Icon className={Styles.Icon} />
-						<span className={Styles.progressValue}>{progressCount} &#37;</span>
+						<div className={Styles.innerContainer}>
+							<Icon className={Styles.Icon} />
+							<span className={Styles.progressValue}>{progressCount} &#37;</span>
+						</div>
 					</div>
 					<div className={Styles.secondaryGraphs}>
 						<div key={`${languageId}cert`} className={Styles.medalContainer}>
