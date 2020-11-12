@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Styles from './Stats.module.css'
 import StatsNav from './StatsNav'
 import Coding from './coding/Coding'
-import Devtools from './Devtools'
+import Devtools from './devtools/Devtools'
 // import More from './More'
 
 const Stats = () => {
