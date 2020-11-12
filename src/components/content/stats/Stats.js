@@ -2,9 +2,8 @@ import React, {useState} from 'react'
 import Styles from './Stats.module.css'
 import StatsNav from './StatsNav'
 import Coding from './coding/Coding'
-import Frameworks from './Frameworks'
 import Devtools from './Devtools'
-import More from './More'
+// import More from './More'
 
 const Stats = () => {
     const [selectedCategory, setSelectedCategory] = useState('coding');
@@ -16,9 +15,8 @@ const Stats = () => {
             <StatsNav selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
             <div className={Styles.statsContainer}>
                 <Coding />
-                {/* <Frameworks />
                 <Devtools />
-                <More /> */}
+                {/* <More /> */}
             </div>
         </article>
     )

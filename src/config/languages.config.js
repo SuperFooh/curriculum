@@ -1,5 +1,5 @@
-import {DiDatabase, DiJavascript, DiCss3, DiPython, DiTerminal, DiHtml5} from 'react-icons/di'
-import {SiVisualstudio} from 'react-icons/si'
+import {DiVisualstudio, DiDatabase, DiJavascript, DiCss3, DiPython, DiTerminal, DiHtml5} from 'react-icons/di'
+
 
 export default {
     'javascript' :{
@@ -45,7 +45,7 @@ export default {
     'csharp' :{
         id: 'csharp',
         text: 'C Sharp',
-        icon: SiVisualstudio,
+        icon: DiVisualstudio,
         color: '#7d3583',
         filter: ['backEnd'],
         progressRatio: .5,
@@ -54,7 +54,7 @@ export default {
     },'vb' :{
         id: 'vb',
         text: 'Visual Basic',
-        icon: SiVisualstudio,
+        icon: DiVisualstudio,
         color: '#185c91',
         filter: ['backEnd'],
         progressRatio: .4,

@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IconContext } from "react-icons";
 import Styles from "./Explorer.module.css";
-import { SiCodesandbox} from 'react-icons/si'
-import {MdLibraryBooks} from 'react-icons/md'
+
 
 //animacion del counter
 

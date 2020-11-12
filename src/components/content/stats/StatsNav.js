@@ -1,6 +1,6 @@
 import React, {useCallback, useState, useRef} from "react";
 import Styles from './StatsNav.module.css'
-import { SiCodesandbox} from 'react-icons/si'
+
 import { RiCodeSSlashLine, RiToolsFill } from 'react-icons/ri'
 import {BiPlusCircle} from 'react-icons/bi'
 
@@ -9,10 +9,6 @@ const meta = [
         id : "coding",
         icon: RiCodeSSlashLine,
         text: "Coding"
-    },{
-        id : "frameworks",
-        icon: SiCodesandbox,
-        text: "Libraries & Frameworks"
     },{
         id : "devtools",
         icon: RiToolsFill,

@@ -1,10 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .container{
     width: 100%;
-    min-height: 100%;
+    max-height: 100%;
     flex: 0 0 auto;
-    color: white;
-    font-size: 72px;
-    font-weight: 900;
-    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.favorites,
+.others{
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+}
+.favorites{
+    position: relative;
+    padding: 3rem;
+}
+.title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    color: black;
+    position: absolute;
+    top: 1em;
+    left: 50%;
+    transform:translateX(-50%) ;
+    z-index: 10;
+    background-color: var(--dark-white);
+    padding: .5em;
+    border-radius: 8px;
+    box-shadow: 0px 18px 10px -10px rgba(0, 0, 0, .7);
+}
+.favoriteList{
+    border: black 1px solid;
+    width: 70%;
+    height: 100%;
+    background-color: var(--light-black);
+    border-radius: 8px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items:center ;
+    justify-content: space-around;
+    padding: 4rem 0;
+    position: relative;
+    transform-style: preserve-3d;
+    margin: 0 auto;
+    box-shadow: 0px 25px 10px -10px rgba(0, 0, 0, .7);
+}
+.favoriteItem{
+    border-radius: 4px;
+    background-color: black;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
     
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: calc(100% + 2rem);
+}
+
+.favoriteItem::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1rem;
+    transform-origin: top left;
+    transform: skewY(-35deg) translateZ(-1px);
+    background-color: rgba(255, 255, 255, .1);
+}
+.favoriteItem::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 1rem;
+    transform-origin: bottom right;
+    transform: skewY(-35deg) translateZ(-1px);
+    background-color: rgba(255, 255, 255, .1);
+}
+
+.favoriteIcon{
+    font-size: 28px;
+    margin-right: .5em;
+}
+.favoriteDescription{
+
 }
