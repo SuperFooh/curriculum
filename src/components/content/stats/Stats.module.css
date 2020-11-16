@@ -1,11 +1,4 @@
-.container{
-    position: relative;
-    padding: 3.5rem;
-    background-color: var(--dark-black);
-    border-radius: 4px;
-    box-shadow: 8px 8px 10px 2px rgba(0, 0, 0, .7);
-    margin-bottom: 3rem;
-}
+
 .title{
     display: inline-block;
     font-family: 'Aldrich', sans-serif;

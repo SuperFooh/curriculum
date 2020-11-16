@@ -21,12 +21,14 @@
 .devtoolItem{
 	display: flex;
 	flex-flow: column nowrap;
-	padding: .5rem 1rem;
-	margin-bottom: .5em;
+	padding: .5rem 2rem;
+	margin-bottom: 1em;
 	border-radius: 8px;
 	background-color: var(--dark-black);
 	border: 1px solid var(--darker-white);
-	
+	margin-right: 1rem;
+	box-shadow:
+		.4rem .3rem .4rem .1rem rgba(0, 0, 0, .7);
 }
 .devtoolInfo{
 	width: 100%;
