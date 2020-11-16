@@ -6,7 +6,7 @@ import {SiVisualstudiocode} from 'react-icons/si'
 const Favorites = () => {
     return (
         <div className={Styles.favorites}>
-        <h3 className={Styles.title}>Favorites 🏆</h3>
+        <h3 className={Styles.title}>Favorites</h3>
         <ul className={Styles.favoriteList}>
             <li style={{color: "#eb4d28"}} className={Styles.favoriteItem}>
                 <FaGitAlt className={Styles.favoriteIcon}/> 

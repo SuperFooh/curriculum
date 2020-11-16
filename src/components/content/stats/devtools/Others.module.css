@@ -4,22 +4,73 @@
 	height: 100%;
 	width: 50%;
 	overflow: hidden;
+    flex: 1 0 auto;
+
+	padding: 3rem 3rem 3rem 0;
 }
 .devtoolList{
-
+	max-height:100% ;
+	font-family: 'Roboto', sans-serif;
+	
+	overflow-y: scroll;
+	overflow-x: visible;
+}
+.devtoolList::-webkit-scrollbar{
+	display: none;
 }
 .devtoolItem{
-
+	display: flex;
+	flex-flow: column nowrap;
+	padding: .5rem 1rem;
+	margin-bottom: .5em;
+	border-radius: 8px;
+	background-color: var(--dark-black);
+	border: 1px solid var(--darker-white);
+	
 }
 .devtoolInfo{
-    
-}
-.devtoolIcon{
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	margin-bottom: .5em;
+	display: flex;
+	align-items: center;
+	color: var(--dark-white);
 
+}
+.icon{
+	font-size: 20px;
+	margin-right: .5em;
 }
 .devToolDescription{
-
+	font-size: 18px;
+	
 }
 .devtoolProgress{
-
+	height: 25px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
+.progressDot{
+	position: relative;
+	height: 15px;
+	width: 15px;
+	background-color:var(--light-violet);
+	border-radius: 50%;
+	border: solid 1px var(--darker-white);
+}
+.progressDotActive::after{
+	content: '';
+	position: absolute;
+	background-color: var(--darker-black);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 50%;	
+	transform: scale(0);
+	animation: animate 1s 3s forwards;
+}
+@keyframes animate{to{transform: scale(1)}}
